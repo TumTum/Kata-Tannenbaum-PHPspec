@@ -1,0 +1,23 @@
+{
+  "name": "tobias/tannenbaum",
+  "description": "Kata um einen Tannenbaum zu erstellen",
+  "minimum-stability": "dev",
+  "license": "MTI",
+  "authors": [
+    {
+      "name": "Tobias Matthaiou",
+      "email": "tm@tobimat.eu"
+    }
+  ],
+  "require-dev": {
+    "phpspec/phpspec": "3.2.2"
+  },
+  "config": {
+    "bin-dir": "./bin/"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    }
+  }
+}
