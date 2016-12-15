@@ -2,7 +2,6 @@
 
 namespace spec\application;
 
-use application\Option\TreeOption;
 use application\TreeService;
 use domain\output\OutputStreamInterface;
 use domain\trees\TreeTypeInterface;
