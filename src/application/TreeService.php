@@ -19,7 +19,9 @@ class TreeService
 
     public function farm(TreeTypeInterface $treeType)
     {
-        $this->outputStream->addLine($treeType->createTop());
+        foreach ($treeType->createTop() as $line) {
+            $this->outputStream->addLine($line);
+        }
 
         for ($i = 2; $i <= $treeType->getHeight(); $i++) {
             $this->outputStream->addLine($treeType->createLine($i));

@@ -4,9 +4,9 @@ namespace domain\trees;
 
 interface TreeTypeInterface
 {
-    public function createTop();
+    public function createTop() :array;
 
-    public function createLine(int $line);
+    public function createLine(int $line, string $char = 'X');
 
     public function createTrunk();
 
