@@ -4,6 +4,7 @@ namespace spec\domain\trees;
 
 use domain\trees\Tannenbaum;
 use domain\output\OutputStreamInterface;
+use domain\trees\TreeTypeInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -17,6 +18,7 @@ class TannenbaumSpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->shouldHaveType(Tannenbaum::class);
+        $this->shouldHaveType(TreeTypeInterface::class);
     }
 
     public function it_can_get_height()
@@ -61,15 +63,15 @@ class TannenbaumSpec extends ObjectBehavior
         $this->createTrunk()->shouldBeEqualTo('   |   ');
     }
 
-    public function it_can_not_create_a_star()
+    public function it_can_create_top_without_star()
     {
-        $this->createStar()->shouldBeEqualTo('');
+        $this->createTop()->shouldBeEqualTo(['   X   ']);
     }
 
-    public function it_can_create_star()
+    public function it_can_create_top_with_star()
     {
         $this->beConstructedWith(4, true);
-        $this->createStar()->shouldBeEqualTo('   *   ');
+        $this->createTop()->shouldBeEqualTo(['   *   ', '   X   ']);
 
     }
 }

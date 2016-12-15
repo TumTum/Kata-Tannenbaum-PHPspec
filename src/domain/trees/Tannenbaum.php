@@ -6,7 +6,7 @@ namespace domain\trees;
  * Class tannenbaum
  * @package domain
  */
-class Tannenbaum
+class Tannenbaum implements TreeTypeInterface
 {
     /**
      * @var int
@@ -32,7 +32,7 @@ class Tannenbaum
     /**
      * @return int
      */
-    public function getHeight()
+    public function getHeight() :int
     {
         return $this->height;
     }
@@ -53,7 +53,7 @@ class Tannenbaum
         return ($this->getHeight() - 1) * 2 + 1;
     }
 
-    public function createLine($line, $char = "X")
+    public function createLine(int $line, string $char = 'X')
     {
         $Ixes  = $this->repeatChar($line, $char);
         return str_pad($Ixes, $this->getMaximalLine(), ' ', STR_PAD_BOTH);
@@ -73,14 +73,16 @@ class Tannenbaum
         return $this->createLine(1, "|");
     }
 
-    /**
-     * @return string
-     */
-    public function createStar()
+    public function createTop(): array
     {
+        $toplines = [];
+
         if ($this->hasStar()) {
-            return $this->createLine(1, "*");
+            $toplines[] = $this->createLine(1, "*");
         }
-        return '';
+
+        $toplines[] = $this->createLine(1);
+
+        return $toplines;
     }
 }
