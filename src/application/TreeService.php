@@ -12,11 +12,21 @@ class TreeService
      */
     private $outputStream;
 
+    /**
+     * TreeService constructor.
+     *
+     * @param OutputStreamInterface $outputStream
+     */
     public function __construct(OutputStreamInterface $outputStream)
     {
         $this->outputStream = $outputStream;
     }
 
+    /**
+     * Erstellt den Baum
+     *
+     * @param TreeTypeInterface $treeType
+     */
     public function farm(TreeTypeInterface $treeType)
     {
         $this->buildTop($treeType);
