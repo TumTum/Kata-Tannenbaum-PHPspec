@@ -1,13 +1,12 @@
 <?php
 
-namespace domain;
-use domain\output\OutputStreamInterface;
+namespace domain\trees;
 
 /**
  * Class tannenbaum
  * @package domain
  */
-class tannenbaum
+class Tannenbaum
 {
     /**
      * @var int
@@ -83,16 +82,5 @@ class tannenbaum
             return $this->createLine(1, "*");
         }
         return '';
-    }
-
-    public function makeTree(OutputStreamInterface $outputStream)
-    {
-        if ($star = $this->createStar()) {
-            $outputStream->addLine($star);
-        }
-        for ($i = 1; $i <= $this->getHeight(); $i++) {
-            $outputStream->addLine($this->createLine($i));
-        }
-        $outputStream->addLine($this->createTrunk());
     }
 }

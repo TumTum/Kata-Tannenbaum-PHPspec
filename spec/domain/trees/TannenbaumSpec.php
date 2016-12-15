@@ -1,14 +1,14 @@
 <?php
 
-namespace spec\domain;
+namespace spec\domain\trees;
 
-use domain\tannenbaum;
+use domain\trees\Tannenbaum;
 use domain\output\OutputStreamInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
 
-class tannenbaumSpec extends ObjectBehavior
+class TannenbaumSpec extends ObjectBehavior
 {
     public function let()
     {
@@ -16,7 +16,7 @@ class tannenbaumSpec extends ObjectBehavior
     }
     function it_is_initializable()
     {
-        $this->shouldHaveType(tannenbaum::class);
+        $this->shouldHaveType(Tannenbaum::class);
     }
 
     public function it_can_get_height()
@@ -71,28 +71,6 @@ class tannenbaumSpec extends ObjectBehavior
         $this->beConstructedWith(4, true);
         $this->createStar()->shouldBeEqualTo('   *   ');
 
-    }
-
-    public function it_can_create_tree(OutputStreamInterface $outputStream)
-    {
-        $outputStream->addLine(Argument::is('   X   '))->shouldBeCalled();
-        $outputStream->addLine(Argument::is('  XXX  '))->shouldBeCalled();
-        $outputStream->addLine(Argument::is(' XXXXX '))->shouldBeCalled();
-        $outputStream->addLine(Argument::is('XXXXXXX'))->shouldBeCalled();
-        $outputStream->addLine(Argument::is('   |   '))->shouldBeCalled();
-        $this->makeTree($outputStream);
-    }
-
-    public function it_can_create_tree_with_star(OutputStreamInterface $outputStream)
-    {
-        $this->beConstructedWith(4, true);
-        $outputStream->addLine(Argument::is('   *   '))->shouldBeCalled();
-        $outputStream->addLine(Argument::is('   X   '))->shouldBeCalled();
-        $outputStream->addLine(Argument::is('  XXX  '))->shouldBeCalled();
-        $outputStream->addLine(Argument::is(' XXXXX '))->shouldBeCalled();
-        $outputStream->addLine(Argument::is('XXXXXXX'))->shouldBeCalled();
-        $outputStream->addLine(Argument::is('   |   '))->shouldBeCalled();
-        $this->makeTree($outputStream);
     }
 }
 /*
