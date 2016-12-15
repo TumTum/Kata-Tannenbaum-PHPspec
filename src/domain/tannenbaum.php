@@ -1,7 +1,7 @@
 <?php
 
 namespace domain;
-use domain\output\outputStreamInterface;
+use domain\output\OutputStreamInterface;
 
 /**
  * Class tannenbaum
@@ -85,7 +85,7 @@ class tannenbaum
         return '';
     }
 
-    public function makeTree(outputStreamInterface $outputStream)
+    public function makeTree(OutputStreamInterface $outputStream)
     {
         if ($star = $this->createStar()) {
             $outputStream->addLine($star);

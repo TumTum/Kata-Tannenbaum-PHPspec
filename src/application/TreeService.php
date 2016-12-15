@@ -2,17 +2,17 @@
 
 namespace application;
 
-use domain\output\outputStreamInterface;
+use domain\output\OutputStreamInterface;
 use domain\trees\TreeTypeInterface;
 
 class TreeService
 {
     /**
-     * @var outputStreamInterface
+     * @var OutputStreamInterface
      */
     private $outputStream;
 
-    public function __construct(outputStreamInterface $outputStream)
+    public function __construct(OutputStreamInterface $outputStream)
     {
         $this->outputStream = $outputStream;
     }

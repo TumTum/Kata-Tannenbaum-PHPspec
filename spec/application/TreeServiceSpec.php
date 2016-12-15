@@ -4,7 +4,7 @@ namespace spec\application;
 
 use application\Option\TreeOption;
 use application\TreeService;
-use domain\output\outputStreamInterface;
+use domain\output\OutputStreamInterface;
 use domain\trees\TreeTypeInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -12,7 +12,7 @@ use Prophecy\Argument;
 class TreeServiceSpec extends ObjectBehavior
 {
     public function let(
-        outputStreamInterface $outputStream
+        OutputStreamInterface $outputStream
     )
     {
         $this->beConstructedWith($outputStream);
@@ -24,7 +24,7 @@ class TreeServiceSpec extends ObjectBehavior
     }
 
     public function it_will_build_the_tree(
-        outputStreamInterface $outputStream,
+        OutputStreamInterface $outputStream,
         TreeTypeInterface $treeType
     )
     {

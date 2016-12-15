@@ -3,7 +3,7 @@
 namespace spec\domain;
 
 use domain\tannenbaum;
-use domain\output\outputStreamInterface;
+use domain\output\OutputStreamInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -73,7 +73,7 @@ class tannenbaumSpec extends ObjectBehavior
 
     }
 
-    public function it_can_create_tree(outputStreamInterface $outputStream)
+    public function it_can_create_tree(OutputStreamInterface $outputStream)
     {
         $outputStream->addLine(Argument::is('   X   '))->shouldBeCalled();
         $outputStream->addLine(Argument::is('  XXX  '))->shouldBeCalled();
@@ -83,7 +83,7 @@ class tannenbaumSpec extends ObjectBehavior
         $this->makeTree($outputStream);
     }
 
-    public function it_can_create_tree_with_star(outputStreamInterface $outputStream)
+    public function it_can_create_tree_with_star(OutputStreamInterface $outputStream)
     {
         $this->beConstructedWith(4, true);
         $outputStream->addLine(Argument::is('   *   '))->shouldBeCalled();

@@ -6,7 +6,7 @@ namespace domain\output;
  * Interface outputStreamInterface
  * @package domain\output
  */
-interface outputStreamInterface
+interface OutputStreamInterface
 {
     public function addLine($line);
 }
