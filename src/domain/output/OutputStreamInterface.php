@@ -9,4 +9,6 @@ namespace domain\output;
 interface OutputStreamInterface
 {
     public function addLine($line);
+
+    public function output();
 }
