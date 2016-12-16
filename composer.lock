@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6a6a5355135370ef171fbb4d165cee96",
-    "content-hash": "001e5e468eff868dd2bdb2caaeb93d30",
+    "hash": "ef4fccb3fb16f822cb4db5be7e86b066",
+    "content-hash": "236f4afa8d5cf5608f71b3416693ad5c",
     "packages": [],
     "packages-dev": [
         {
@@ -1065,6 +1065,34 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2016-12-13 09:39:51"
+        },
+        {
+            "name": "tumtum/phpspec-alias",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TumTum/phpspec-alias.git",
+                "reference": "698c2c035d25f3aa0e9b441cd9b14aed223f0867"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TumTum/phpspec-alias/zipball/698c2c035d25f3aa0e9b441cd9b14aed223f0867",
+                "reference": "698c2c035d25f3aa0e9b441cd9b14aed223f0867",
+                "shasum": ""
+            },
+            "require": {
+                "phpspec/phpspec": "*"
+            },
+            "bin": [
+                "bin/pec"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Change phpspec run or describe command quickly",
+            "time": "2016-12-15 12:22:57"
         },
         {
             "name": "webmozart/assert",

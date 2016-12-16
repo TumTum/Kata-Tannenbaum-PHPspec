@@ -10,7 +10,8 @@
     }
   ],
   "require-dev": {
-    "phpspec/phpspec": "3.2.2"
+    "phpspec/phpspec": "3.2.2",
+    "tumtum/phpspec-alias": "^0.1.1"
   },
   "config": {
     "bin-dir": "./bin/"
