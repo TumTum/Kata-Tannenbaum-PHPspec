@@ -2,6 +2,7 @@
 
 namespace infrastruktur;
 
+use application\output\OutputStdoutStream;
 use application\TreeService;
 use domain\output\OutputStreamInterface;
 use domain\trees\TreeTypeInterface;
@@ -9,16 +10,16 @@ use domain\trees\TreeTypeInterface;
 class CLI
 {
     /**
-     * @var OutputStreamInterface
+     * @var OutputStdoutStream
      */
     private $outputStream;
 
     /**
      * CLI constructor.
      *
-     * @param OutputStreamInterface $outputStream
+     * @param OutputStdoutStream $outputStream
      */
-    public function __construct(OutputStreamInterface $outputStream)
+    public function __construct(OutputStdoutStream $outputStream)
     {
         $this->outputStream = $outputStream;
     }
