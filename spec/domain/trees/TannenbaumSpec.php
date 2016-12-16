@@ -72,12 +72,25 @@ class TannenbaumSpec extends ObjectBehavior
     {
         $this->beConstructedWith(4, true);
         $this->createTop()->shouldBeEqualTo(['   *   ', '   X   ']);
+    }
 
+    public function it_can_create_tree()
+    {
+        $this->createTop( )->shouldBeEqualTo(['   X   ']);
+        $this->createLine(2)->shouldBeEqualTo('  XXX  ');
+        $this->createLine(3)->shouldBeEqualTo(' XXXXX ');
+        $this->createLine(4)->shouldBeEqualTo('XXXXXXX');
+        $this->createTrunk()->shouldBeEqualTo('   |   ');
+    }
+
+    public function it_can_create_tree_with_star()
+    {
+        $this->beConstructedWith(4, true);
+        $this->createTop( )->shouldBeEqualTo(['   *   ',
+                                              '   X   ']);
+        $this->createLine(2)->shouldBeEqualTo('  XXX  ');
+        $this->createLine(3)->shouldBeEqualTo(' XXXXX ');
+        $this->createLine(4)->shouldBeEqualTo('XXXXXXX');
+        $this->createTrunk()->shouldBeEqualTo('   |   ');
     }
 }
-/*
-1     X
-2    XXX
-3   XXXXX
-4  XXXXXXX
-5 XXXXXXXXX */
