@@ -37,7 +37,7 @@ class TreeService
     /**
      * @param TreeTypeInterface $treeType
      */
-    private function buildTop(TreeTypeInterface $treeType): void
+    private function buildTop(TreeTypeInterface $treeType)
     {
         foreach ($treeType->createTop() as $line) {
             $this->outputStream->addLine($line);
@@ -47,7 +47,7 @@ class TreeService
     /**
      * @param TreeTypeInterface $treeType
      */
-    private function buildTreecrown(TreeTypeInterface $treeType): void
+    private function buildTreecrown(TreeTypeInterface $treeType)
     {
         for ($i = 2; $i <= $treeType->getHeight(); $i++) {
             $this->outputStream->addLine($treeType->createLine($i));
@@ -57,7 +57,7 @@ class TreeService
     /**
      * @param TreeTypeInterface $treeType
      */
-    private function buildTrunk(TreeTypeInterface $treeType): void
+    private function buildTrunk(TreeTypeInterface $treeType)
     {
         $this->outputStream->addLine($treeType->createTrunk());
     }

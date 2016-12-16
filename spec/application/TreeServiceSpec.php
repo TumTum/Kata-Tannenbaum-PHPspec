@@ -27,8 +27,8 @@ class TreeServiceSpec extends ObjectBehavior
         TreeTypeInterface $treeType
     )
     {
-        $treeType->createLine(Argument::any())->shouldBeCalled();
         $treeType->createTop()->willReturn(['*','X'])->shouldBeCalled();
+        $treeType->createLine(Argument::any())->shouldBeCalled();
         $treeType->createTrunk()->shouldBeCalled();
         $treeType->getHeight()->willReturn(4)->shouldBeCalled();
 
